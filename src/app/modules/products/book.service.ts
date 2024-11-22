@@ -15,22 +15,22 @@ const getBooksDB = async ()=>{
 }
 //Implement get a single book item
 
-const getBookDB = async (id : string)=>{
-    const result = await bookModel.findOne({id});
+const getBookDB = async (_id : string)=>{
+    const result = await bookModel.findOne({_id});
     return result;
 }
 //Implement Update a book item
 
-const updateBookDB = async (id: string, book: Tbook)=>{
-    const result = await bookModel.updateOne({id}, book);
+const updateBookDB = async (_id: string, book: Tbook)=>{
+    const result = await bookModel.updateOne({_id}, book);
     return result;
 }
 
 
 //delete a book item
 
-const deleteBookDB = async (id: string)=>{
-    const result = await bookModel.deleteOne({id});
+const deleteBookDB = async (_id: string)=>{
+    const result = await bookModel.deleteOne({_id});
     return result;
 }
 export const bookService = {
