@@ -20,6 +20,7 @@ const bookSchema = new Schema<Tbook>(
     inStock: { type: 'boolean', required: true },
   },
   { timestamps: true },
+  
 );
 
 export const bookModel = model<Tbook>('book', bookSchema);
