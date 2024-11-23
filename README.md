@@ -51,7 +51,9 @@ Develop an Express application with TypeScript, integrating MongoDB with Mongoos
 
 
 ### Github Link 
+https://github.com/mahedee007/book-shop-server
 
 ### Live Site Link
+https://book-shop-server-sable.vercel.app/api/products
 
 ### Video Description Link
