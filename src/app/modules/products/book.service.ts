@@ -7,10 +7,24 @@ const createBookDB = async (book: Tbook) => {
   return result;
 };
 
-//Implement Get all book items
-const getBooksDB = async () => {
-  const result = await bookModel.find();
-  return result;
+//Implement Get all book items by search string
+const getBooksDB = async (searchTerm : string | undefined) => {
+  
+    let query = {}
+    if(searchTerm){
+      const regex = new RegExp(searchTerm, 'i');
+      query = {
+        $or: [
+          { title: { $regex: regex } },
+          { author: { $regex: regex } },
+          { category: { $regex: regex } }
+        ]
+      };
+    }
+    const result = await bookModel.find(query);
+    return result;
+  
+ 
 };
 //Implement get a single book item
 

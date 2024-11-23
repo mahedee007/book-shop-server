@@ -46,6 +46,9 @@ Develop an Express application with TypeScript, integrating MongoDB with Mongoos
 - at controller.ts file I handle request and response and set validation. 
 - from controller.ts file I use it on router and from router I send it app.ts file and run it to server.
 
+## Final Step
+- Dploy into vercel 
+
 
 ### Github Link 
 
