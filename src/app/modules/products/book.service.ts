@@ -1,3 +1,4 @@
+
 import { Tbook } from './book.interface';
 import { bookModel } from './book.model';
 
@@ -30,12 +31,17 @@ const getBooksDB = async (searchTerm : string | undefined) => {
 
 const getBookDB = async (_id: string) => {
   const result = await bookModel.findOne({ _id });
+ 
   return result;
 };
 //Implement Update a book item
 
 const updateBookDB = async (_id: string, book: Tbook) => {
   const result = await bookModel.updateOne({ _id }, book);
+  if(book.quantity <0 ){
+    throw {status: 'error', message:"quantity cannot be negative"};
+    
+  }
   return result;
 };
 

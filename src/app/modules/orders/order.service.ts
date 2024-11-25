@@ -20,6 +20,8 @@ const createOrder = async (
   product.quantity -= quantity;
   if (product.quantity === 0) {
     product.inStock = false;
+  }else{
+    product.inStock = true;
   }
   await product.save();
 

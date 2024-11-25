@@ -53,7 +53,7 @@ const getSingleBook = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    res.status(500).json({
+    res.status(404).json({
       success: false,
       message: 'Error retrieving book',
       err,
@@ -77,7 +77,7 @@ const updateBook = async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       message: 'Error updating book',
-      err,
+      err
     });
   }
 };

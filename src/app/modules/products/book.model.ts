@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
 import { Tbook } from './book.interface';
 
+
 const bookSchema = new Schema<Tbook>(
   {
     title: { type: 'string', required: true, unique: true },
@@ -17,9 +18,10 @@ const bookSchema = new Schema<Tbook>(
     },
     description: { type: 'string', required: true },
     quantity: { type: 'number', required: true, min: 0 },
-    inStock: { type: 'boolean', required: true },
+    inStock: { type: 'boolean', required: true},
   },
   { timestamps: true },
+ 
   
 );
 
